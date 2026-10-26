@@ -27,7 +27,7 @@ button {
   justify-content: center;
   overflow: hidden;
   padding: 24px 16px;
-  background-image: url('/gatito.png');
+  background-image: url('/pedida/gatito.png');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

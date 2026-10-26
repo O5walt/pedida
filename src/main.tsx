@@ -132,13 +132,13 @@ function App() {
             <>
               <img
                   className="dancing-cat cat-left"
-                  src="/dancing-cat-left.gif"
+                  src="/pedida/dancing-cat-left.gif"
                   alt="Gatito bailando a la izquierda"
               />
 
               <img
                   className="dancing-cat cat-right"
-                  src="/dancing-cat-right.gif"
+                  src="/pedida/dancing-cat-right.gif"
                   alt="Gatito bailando a la derecha"
               />
             </>
