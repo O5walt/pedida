@@ -1,0 +1,235 @@
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+  margin: 0;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+button {
+  font: inherit;
+}
+
+.page {
+  position: relative;
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  padding: 24px 16px;
+  background-image: url('/gatito.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 225, 237, 0.48);
+}
+
+.card {
+  position: relative;
+  z-index: 2;
+  width: min(100%, 460px);
+  padding: 34px 26px;
+  text-align: center;
+  color: #7a244b;
+  background: rgba(255, 250, 252, 0.91);
+  border: 2px solid rgba(255, 255, 255, 0.85);
+  border-radius: 28px;
+  box-shadow: 0 15px 50px rgba(112, 35, 72, 0.2);
+  backdrop-filter: blur(7px);
+}
+
+.big-heart {
+  font-size: 58px;
+  line-height: 1.2;
+  animation: heartbeat 1.3s infinite;
+}
+
+h1 {
+  margin: 12px 0;
+  font-size: clamp(34px, 8vw, 48px);
+  line-height: 1.12;
+}
+
+.card > p {
+  font-size: 16px;
+  color: #92506d;
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 18px;
+  min-height: 65px;
+  margin: 24px 0 18px;
+}
+
+.buttons button {
+  min-width: 100px;
+  padding: 13px 22px;
+  border: none;
+  border-radius: 15px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.yes {
+  color: white;
+  background: #f05b96;
+  box-shadow: 0 5px 14px rgba(240, 91, 150, 0.3);
+}
+
+.yes:hover {
+  transform: scale(1.08);
+}
+
+.no {
+  color: #8b526b;
+  background: #f4e3eb;
+}
+
+.tiny {
+  margin-top: 20px;
+  font-size: 12px;
+  color: #a66b85;
+}
+
+.result h2 {
+  font-size: 21px;
+  line-height: 1.4;
+}
+
+.result p {
+  font-size: 17px;
+}
+
+.song-player {
+  width: 100%;
+  max-width: 320px;
+  margin: 24px auto 0;
+}
+
+.song-player p {
+  font-weight: bold;
+  margin-bottom: 12px;
+}
+
+.song-player audio {
+  display: block;
+  width: 100%;
+  margin-top: 12px;
+}
+
+.dancing-cat {
+  position: fixed;
+  z-index: 3;
+  bottom: 12px;
+  width: clamp(90px, 19vw, 180px);
+  height: auto;
+  pointer-events: none;
+  animation: dance 0.65s infinite alternate ease-in-out;
+}
+
+.cat-left {
+  left: 10px;
+}
+
+.cat-right {
+  right: 10px;
+  animation-delay: 0.2s;
+}
+
+.floating-heart {
+  position: fixed;
+  z-index: 5;
+  bottom: -40px;
+  font-size: 25px;
+  pointer-events: none;
+  animation: float-up 4s linear forwards;
+}
+
+@keyframes heartbeat {
+  0%, 100% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.13);
+  }
+}
+
+@keyframes dance {
+  from {
+    transform: translateY(0) rotate(-8deg);
+  }
+
+  to {
+    transform: translateY(-15px) rotate(8deg);
+  }
+}
+
+@keyframes float-up {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 0;
+  }
+
+  10% {
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-110vh) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .card {
+    padding: 28px 18px;
+  }
+
+  .dancing-cat {
+    width: 100px;
+    bottom: 8px;
+  }
+
+  .cat-left {
+    left: 0;
+  }
+
+  .cat-right {
+    right: 0;
+  }
+
+  .song-player {
+    max-width: 100%;
+  }
+}
+
+@media (max-height: 700px) {
+  .page {
+    align-items: flex-start;
+    overflow-y: auto;
+  }
+
+  .card {
+    margin: 10px 0 100px;
+  }
+}
