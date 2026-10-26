@@ -112,7 +112,7 @@ function App() {
                       <p>Nuestra canción 🎶</p>
 
                       <audio
-                          src="/cancion.mp3"
+                          src="/pedida/cancion.mp3"
                           autoPlay
                           controls
                           onLoadedMetadata={(event) => {
